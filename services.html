@@ -13,6 +13,11 @@
     body { margin: 0; }
     #abm-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: #f7f3ee; border-bottom: 1px solid rgba(220,211,201,.7); }
     .abm-btn-primary, .abm-btn-secondary { white-space: nowrap; }
+    .abm-btn-primary{ background:#2e2723 !important; color:#f7f3ee !important; }
+    .abm-btn-primary:hover{ background:#16110e !important; }
+    .cta-dark .abm-btn-primary{ background:#f7f3ee !important; color:#2e2723 !important; }
+    .cta-dark .abm-btn-primary:hover{ background:#e3c9c2 !important; color:#2e2723 !important; }
+
     details summary::-webkit-details-marker { display: none; }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
@@ -172,7 +177,7 @@
 </section>
 
 <!-- ============ CTA BAND ============ -->
-<section style="position:relative;overflow:hidden">
+<section class="cta-dark" style="position:relative;overflow:hidden">
   <img src="images/svc-cta.webp" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%" />
   <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(46,39,35,.52),rgba(46,39,35,.66))"></div>
   <div style="position:relative;z-index:2;max-width:760px;margin:0 auto;padding:clamp(86px,13vw,150px) clamp(24px,5vw,40px);text-align:center">
