@@ -32,9 +32,12 @@
     .abm-reveal[data-delay="1"] { transition-delay: .12s; }
     .abm-reveal[data-delay="2"] { transition-delay: .24s; }
 
-    /* Wave dividers */
-    .abm-wave { display: block; overflow: hidden; line-height: 0; }
-    .abm-wave svg { display: block; width: 100%; }
+    /* Ornament divider */
+    .abm-ornament { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 0 auto clamp(40px,5vw,56px); max-width: 210px; }
+    .abm-ornament .line { height: 1px; flex: 1; }
+    .abm-ornament .l1 { background: linear-gradient(90deg, transparent, #dcd3c9); }
+    .abm-ornament .l2 { background: linear-gradient(90deg, #dcd3c9, transparent); }
+    .abm-ornament .dot { width: 7px; height: 7px; transform: rotate(45deg); border: 1px solid #c08566; flex: none; }
 
     /* Seal spin */
     @keyframes abmSpin { to { transform: rotate(360deg); } }
@@ -132,10 +135,10 @@
       <a href="services.html" class="abm-btn-secondary btn-ivory">View services</a>
     </div>
   </div>
-  <!-- Wave: hero → ivory -->
-  <div aria-hidden="true" style="position:absolute;bottom:0;left:0;right:0;z-index:15;line-height:0">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="width:100%;height:80px;display:block">
-      <path d="M0,80 L0,48 C240,8 480,0 720,0 C960,0 1200,8 1440,48 L1440,80 Z" fill="#f7f3ee"/>
+  <!-- Hero base: single signature curve -->
+  <div aria-hidden="true" style="position:absolute;bottom:-1px;left:0;right:0;z-index:15;line-height:0">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none" style="width:100%;height:clamp(48px,6vw,90px);display:block">
+      <path d="M0,90 L0,62 C480,2 960,2 1440,62 L1440,90 Z" fill="#f7f3ee"/>
     </svg>
   </div>
 </section>
@@ -152,17 +155,11 @@
   </div>
 </section>
 
-<!-- Wave: ivory → linen -->
-<div class="abm-wave" aria-hidden="true" style="background:#efe6dc">
-  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" height="72">
-    <path d="M0,0 L1440,0 C1200,72 240,72 0,0 Z" fill="#f7f3ee"/>
-  </svg>
-</div>
-
 <!-- ============ SERVICES ============ -->
 <section id="services" style="background:#efe6dc;padding:clamp(48px,8vw,96px) clamp(24px,5vw,40px) clamp(72px,11vw,128px)">
   <div style="max-width:1152px;margin:0 auto">
     <div style="max-width:640px;margin:0 auto clamp(40px,6vw,64px);text-align:center">
+      <div class="abm-ornament abm-reveal" aria-hidden="true"><span class="line l1"></span><span class="dot"></span><span class="line l2"></span></div>
       <p class="abm-eyebrow abm-reveal" style="margin:0 0 20px">02 — Ways to work together</p>
       <h2 class="abm-reveal" data-delay="1" style="font-weight:400;font-size:clamp(34px,4.4vw,50px);line-height:1.1;margin:0">
         Built around your practice,<span class="block italic" style="color:#c08566">and the way you actually work.</span>
@@ -199,13 +196,6 @@
     </div>
   </div>
 </section>
-
-<!-- Wave: linen → ivory -->
-<div class="abm-wave" aria-hidden="true" style="background:#f7f3ee">
-  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" height="72">
-    <path d="M0,72 L1440,72 C1200,0 240,0 0,72 Z" fill="#efe6dc"/>
-  </svg>
-</div>
 
 <!-- ============ PORTFOLIO — COVER SLIDER ============ -->
 <section id="portfolio" style="background:#f7f3ee;padding:clamp(48px,8vw,96px) 0 clamp(72px,11vw,128px);overflow:hidden">
@@ -303,13 +293,6 @@
   </div>
 </section>
 
-<!-- Wave: ivory → linen -->
-<div class="abm-wave" aria-hidden="true" style="background:#efe6dc">
-  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" height="72">
-    <path d="M0,0 L1440,0 C1200,72 240,72 0,0 Z" fill="#f7f3ee"/>
-  </svg>
-</div>
-
 <!-- ============ WORK WITH MORGAN ============ -->
 <section style="background:#efe6dc;padding:clamp(48px,8vw,96px) clamp(24px,5vw,40px) clamp(72px,11vw,128px)">
   <div style="max-width:1152px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5vw,72px);align-items:center">
@@ -349,15 +332,9 @@
 
 <!-- ============ CTA BAND ============ -->
 <section style="position:relative;overflow:hidden">
-  <!-- Wave: linen → CTA (top) -->
-  <div aria-hidden="true" style="position:absolute;top:0;left:0;right:0;z-index:5;line-height:0">
-    <svg viewBox="0 0 1440 72" preserveAspectRatio="none" style="width:100%;height:72px;display:block">
-      <path d="M0,0 L1440,0 L1440,40 C1200,72 240,72 0,40 Z" fill="#efe6dc"/>
-    </svg>
-  </div>
   <img src="images/portrait-2.avif" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%" />
   <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(46,39,35,.5),rgba(46,39,35,.66))"></div>
-  <div style="position:relative;z-index:6;max-width:780px;margin:0 auto;padding:clamp(112px,16vw,172px) clamp(24px,5vw,40px) clamp(92px,12vw,148px);text-align:center">
+  <div style="position:relative;z-index:6;max-width:780px;margin:0 auto;padding:clamp(92px,14vw,160px) clamp(24px,5vw,40px);text-align:center">
     <p class="abm-eyebrow" style="color:#e3c9c2;margin:0 0 22px">Let's begin</p>
     <h2 style="font-weight:400;font-size:clamp(40px,6.4vw,72px);line-height:1.03;margin:0;color:#f7f3ee">
       Let's build a brand<br><span class="italic">that feels like you.</span>
@@ -366,18 +343,13 @@
     <a href="contact.html" class="abm-btn-primary" style="margin-top:38px;display:inline-flex">Start the conversation</a>
     <div aria-hidden="true" style="width:46px;height:1px;background:rgba(247,243,238,.45);margin:40px auto 0"></div>
   </div>
-  <!-- Wave: CTA → ivory (bottom) -->
-  <div aria-hidden="true" style="position:absolute;bottom:0;left:0;right:0;z-index:5;line-height:0">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="width:100%;height:80px;display:block">
-      <path d="M0,80 L0,50 C240,8 480,0 720,0 C960,0 1200,8 1440,50 L1440,80 Z" fill="#f7f3ee"/>
-    </svg>
-  </div>
 </section>
 
 <!-- ============ TESTIMONIALS ============ -->
 <section style="background:#f7f3ee;padding:clamp(80px,12vw,140px) clamp(24px,5vw,40px) clamp(72px,11vw,128px)">
   <div style="max-width:1152px;margin:0 auto">
     <div style="max-width:640px;margin:0 auto clamp(40px,6vw,64px);text-align:center">
+      <div class="abm-ornament abm-reveal" aria-hidden="true"><span class="line l1"></span><span class="dot"></span><span class="line l2"></span></div>
       <p class="abm-eyebrow abm-reveal" style="margin:0 0 20px">05 — Kind words</p>
       <h2 class="abm-reveal" data-delay="1" style="font-weight:400;font-size:clamp(34px,4.4vw,50px);line-height:1.1;margin:0">
         Providers who finally feel<span class="block italic" style="color:#c08566">proud of their presence.</span>
@@ -408,13 +380,6 @@
     </div>
   </div>
 </section>
-
-<!-- Wave: ivory → espresso (footer) -->
-<div class="abm-wave" aria-hidden="true" style="background:#2e2723">
-  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
-    <path d="M0,0 L1440,0 C1200,60 240,60 0,0 Z" fill="#f7f3ee"/>
-  </svg>
-</div>
 
 <!-- ============ FOOTER ============ -->
 <footer class="bg-espresso text-ivory">
