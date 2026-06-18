@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    // Google Consent Mode v2 — default everything to denied until the visitor accepts
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','functionality_storage':'granted','security_storage':'granted','wait_for_update':500});
+    try{ if(localStorage.getItem('abmConsent')==='granted'){ gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'}); } }catch(e){}
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy · Aesthetics by Morgan</title>
@@ -148,7 +155,7 @@
     </div>
     <div class="mt-14 pt-8 border-t border-ivory/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
       <p class="text-sm text-ivory/55">© Aesthetics by Morgan. All rights reserved.</p>
-      <p class="text-sm text-ivory/55">Made with intention.</p>
+      <p class="text-sm text-ivory/55">Made with intention. · <button type="button" onclick="window.abmOpenCookie&&window.abmOpenCookie()" style="background:none;border:0;color:inherit;font:inherit;text-decoration:underline;cursor:pointer;padding:0">Cookie preferences</button></p>
     </div>
   </div>
 </footer>
@@ -167,6 +174,49 @@
     toggle.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu');
     toggle.setAttribute('aria-expanded', !isOpen);
   });
+</script>
+<!-- Cookie consent (Google Consent Mode v2) -->
+<style>
+  .abm-cookie{ position:fixed; left:16px; right:16px; bottom:16px; z-index:120; animation:abmCookieIn .4s ease; }
+  @media(min-width:680px){ .abm-cookie{ left:auto; right:24px; bottom:24px; max-width:430px; } }
+  @keyframes abmCookieIn{ from{ opacity:0; transform:translateY(12px); } to{ opacity:1; transform:none; } }
+  @media (prefers-reduced-motion: reduce){ .abm-cookie{ animation:none; } }
+  .abm-cookie-inner{ background:#16110e; color:#f3ede5; border:1px solid rgba(247,243,238,.12); border-radius:14px; padding:18px; box-shadow:0 18px 40px rgba(20,15,12,.35); }
+  .abm-cookie-text{ margin:0 0 14px; font-family:'Jost',system-ui,sans-serif; font-size:13.5px; line-height:1.6; color:rgba(247,243,238,.82); }
+  .abm-cookie-text a{ color:#e3c9c2; }
+  .abm-cookie-btns{ display:flex; gap:10px; justify-content:flex-end; }
+  .abm-cookie-btn{ font-family:'Jost',system-ui,sans-serif; font-size:13px; font-weight:500; border-radius:8px; padding:9px 16px; cursor:pointer; border:1px solid transparent; transition:background-color .15s; }
+  .abm-cookie-btn.ghost{ background:transparent; color:#f3ede5; border-color:rgba(247,243,238,.3); }
+  .abm-cookie-btn.ghost:hover{ background:rgba(247,243,238,.1); }
+  .abm-cookie-btn.solid{ background:#f7f3ee; color:#16110e; }
+  .abm-cookie-btn.solid:hover{ background:#e3c9c2; }
+</style>
+<div id="abm-cookie" class="abm-cookie" role="dialog" aria-label="Cookie consent" hidden>
+  <div class="abm-cookie-inner">
+    <p class="abm-cookie-text">I use cookies to understand site traffic and improve your experience. Accept, or keep only what's necessary — see the <a href="privacy.html">Privacy Policy</a>.</p>
+    <div class="abm-cookie-btns">
+      <button type="button" id="cookie-decline" class="abm-cookie-btn ghost">Only necessary</button>
+      <button type="button" id="cookie-accept" class="abm-cookie-btn solid">Accept</button>
+    </div>
+  </div>
+</div>
+<script>
+  (function(){
+    var KEY='abmConsent';
+    var banner=document.getElementById('abm-cookie'); if(!banner) return;
+    var choice=null; try{ choice=localStorage.getItem(KEY); }catch(e){}
+    if(!choice){ banner.hidden=false; }
+    function decide(val){
+      try{ localStorage.setItem(KEY,val); }catch(e){}
+      if(val==='granted' && typeof gtag==='function'){
+        gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'});
+      }
+      banner.hidden=true;
+    }
+    var ok=document.getElementById('cookie-accept'); if(ok) ok.onclick=function(){ decide('granted'); };
+    var no=document.getElementById('cookie-decline'); if(no) no.onclick=function(){ decide('denied'); };
+    window.abmOpenCookie=function(){ banner.hidden=false; };
+  })();
 </script>
 </body>
 </html>
