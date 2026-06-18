@@ -57,6 +57,12 @@
     .abm-slider { scrollbar-width: none; -ms-overflow-style: none; }
     .abm-slider::-webkit-scrollbar { display: none; }
 
+    /* Mobile hero: center CTAs, hide scroll cue (it was overlapping) */
+    @media (max-width: 640px) {
+      .hero-cta { justify-content: center; }
+      .abm-scroll-cue { display: none !important; }
+    }
+
     /* Side label */
     .abm-hero-sidelabel { display: none; }
     @media (min-width: 1024px) { .abm-hero-sidelabel { display: block; } }
@@ -143,7 +149,7 @@
   <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,15,12,.30) 0%,rgba(20,15,12,.40) 40%,rgba(20,15,12,.70) 100%)" aria-hidden="true"></div>
   <div style="position:absolute;top:0;left:0;right:0;height:170px;background:linear-gradient(180deg,rgba(20,15,12,.55),transparent);pointer-events:none" aria-hidden="true"></div>
   <div class="abm-hero-sidelabel" aria-hidden="true" style="position:absolute;left:clamp(14px,2.6vw,32px);top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:rgba(247,243,238,.7);z-index:20">Est. San Antonio · Aesthetic Providers</div>
-  <div aria-hidden="true" style="position:absolute;bottom:100px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:9px;z-index:20">
+  <div class="abm-scroll-cue" aria-hidden="true" style="position:absolute;bottom:100px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:9px;z-index:20">
     <span style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(247,243,238,.72)">Scroll</span>
     <span style="width:1px;height:34px;background:linear-gradient(rgba(247,243,238,.75),rgba(247,243,238,0))"></span>
   </div>
@@ -154,7 +160,7 @@
       <span class="block text-5xl sm:text-6xl md:text-hero font-display italic text-ivory/85">Strategy that converts.</span>
     </h1>
     <p class="mt-7 max-w-xl text-ivory/90" style="font-size:18px;line-height:1.75">In-person content creation and strategy for aesthetic providers — injectors, estheticians, medspas, and beyond. Show up consistently online without doing it all yourself.</p>
-    <div class="mt-9 flex flex-wrap items-center gap-4">
+    <div class="hero-cta mt-9 flex flex-wrap items-center gap-4">
       <a href="contact.html" class="abm-btn-primary">Book a call</a>
       <a href="services.html" class="abm-btn-secondary btn-ivory">View services</a>
     </div>
