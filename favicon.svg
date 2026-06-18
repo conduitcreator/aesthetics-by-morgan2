@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <rect width="48" height="48" rx="11" fill="#2e2723"/>
+  <circle cx="24" cy="24" r="16.5" fill="none" stroke="#e3c9c2" stroke-width="1.4"/>
+  <circle cx="24" cy="10" r="1.5" fill="#e3c9c2"/>
+  <text x="24" y="25.5" text-anchor="middle" dominant-baseline="central" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-weight="500" font-size="15.5" fill="#f7f3ee">abm</text>
+</svg>
