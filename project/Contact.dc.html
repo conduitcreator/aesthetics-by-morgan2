@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="abm/aesthetics-by-morgan.css">
+<style>
+  html { scroll-behavior: smooth; }
+  .abm-btn-primary, .abm-btn-secondary { white-space: nowrap; }
+  header .font-display { white-space: nowrap; }
+  .abm-field { width:100%; box-sizing:border-box; background:#f7f3ee; border:1px solid #dcd3c9; border-radius:8px; padding:13px 14px; font-family:'Jost',system-ui,sans-serif; font-size:15px; color:#2e2723; outline:none; transition:border-color .18s, box-shadow .18s; }
+  .abm-field:focus { border-color:#c08566; box-shadow:0 0 0 3px rgba(192,133,102,.18); }
+  .abm-field::placeholder { color:#b3a596; }
+  .abm-label { display:block; font-family:'Jost',sans-serif; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#8a7b6d; margin-bottom:8px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+<script>
+(function(){
+  function ready(){ return window.React && window.React.createElement; }
+  function shim(){
+    var R = window.React; if(!R || R.jsx) return;
+    var c = R.createElement;
+    var j = function(type,cfg,key){
+      cfg = cfg || {};
+      var ch = cfg.children, props = {};
+      for (var k in cfg){ if (k!=='children') props[k]=cfg[k]; }
+      if (key!==undefined) props.key = key;
+      if (ch===undefined) return c(type,props);
+      return Array.isArray(ch) ? c.apply(null,[type,props].concat(ch)) : c(type,props,ch);
+    };
+    R.jsx = j; R.jsxs = j;
+  }
+  function load(){ shim(); var s=document.createElement('script'); s.src='abm/aesthetics-by-morgan.umd.cjs'; document.head.appendChild(s); }
+  if (ready()) load();
+  else { var t=setInterval(function(){ if(ready()){ clearInterval(t); load(); } }, 30); }
+})();
+</script>
+</helmet>
+<div class="abm-root" style="background:#f7f3ee; color:#2e2723; font-family:'Jost',system-ui,sans-serif; min-height:100vh">
+
+  <x-import component-from-global-scope="ABM.NavBar" cta-label="Book a call" cta-href="Contact.dc.html" links="{{ navLinks }}" hint-size="100%,80px"></x-import>
+
+  <!-- ============ HEADER ============ -->
+  <section style="background:#efe6dc; padding:clamp(60px,8vw,104px) clamp(24px,5vw,40px) clamp(48px,6vw,72px)">
+    <div style="max-width:1152px; margin:0 auto">
+      <p class="abm-eyebrow" style="margin:0 0 18px">Contact</p>
+      <h1 style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:400; font-size:clamp(44px,6.4vw,76px); line-height:1.02; margin:0; color:#2e2723">Let's <span style="font-style:italic; color:#c08566">connect.</span></h1>
+      <p style="margin:24px 0 0; max-width:560px; font-size:18px; line-height:1.75; color:#7a6c5e">Fill out the form and share the details about your next big move. I'll get back to you within 48 hours. Ready to level up your brand and turn ideas into real results? I'm here for it.</p>
+    </div>
+  </section>
+
+  <!-- ============ FORM + ASIDE ============ -->
+  <section style="background:#f7f3ee; padding:clamp(48px,7vw,88px) clamp(24px,5vw,40px) clamp(72px,10vw,120px)">
+    <div style="max-width:1152px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(40px,5vw,72px); align-items:start">
+
+      <!-- FORM -->
+      <div style="grid-column:span 1; min-width:0">
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ on }}">
+          <form onSubmit="{{ submit }}" style="display:flex; flex-direction:column; gap:22px">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px">
+              <div><label class="abm-label">First name <span style="color:#c08566">*</span></label><input class="abm-field" type="text" name="first" required="required" /></div>
+              <div><label class="abm-label">Last name <span style="color:#c08566">*</span></label><input class="abm-field" type="text" name="last" required="required" /></div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px">
+              <div><label class="abm-label">Email <span style="color:#c08566">*</span></label><input class="abm-field" type="email" name="email" required="required" /></div>
+              <div><label class="abm-label">Phone <span style="color:#c08566">*</span></label><input class="abm-field" type="tel" name="phone" required="required" /></div>
+            </div>
+            <div>
+              <label class="abm-label">What are you interested in? <span style="color:#c08566">*</span></label>
+              <select class="abm-field" name="service" required="required">
+                <option value="">Select an option</option>
+                <option>Strategic Content Session</option>
+                <option>Branding Photos</option>
+                <option>Event Content Collection</option>
+                <option>Ongoing Social Media Support</option>
+                <option>Workshops + Hosting</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="abm-label">Tell me about your goals <span style="color:#c08566">*</span></label>
+              <textarea class="abm-field" name="message" required="required" style="min-height:130px; resize:vertical" placeholder="Where are you now, and what are you ready to grow?"></textarea>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px">
+              <div><label class="abm-label">Business name</label><input class="abm-field" type="text" name="business" /></div>
+              <div><label class="abm-label">Instagram</label><input class="abm-field" type="text" name="social" placeholder="@yourhandle" /></div>
+            </div>
+            <div>
+              <label class="abm-label">How did you hear about ABM?</label>
+              <select class="abm-field" name="referral">
+                <option value="">Select an option</option>
+                <option>Instagram</option>
+                <option>A referral</option>
+                <option>Google search</option>
+                <option>A friend or colleague</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <button type="submit" class="abm-btn-primary" style="margin-top:6px; align-self:flex-start">Submit inquiry</button>
+          </form>
+        </sc-if>
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ off }}">
+          <div style="background:#efe6dc; border:1px solid rgba(220,211,201,.7); border-radius:16px; padding:clamp(36px,5vw,56px); text-align:center">
+            <div style="width:64px; height:64px; border-radius:50%; border:1px solid #c08566; display:grid; place-items:center; margin:0 auto 22px">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c08566" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <h2 style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:400; font-size:clamp(28px,4vw,40px); line-height:1.1; margin:0; color:#2e2723">Thank you, <span style="font-style:italic; color:#c08566">it's on its way.</span></h2>
+            <p style="margin:18px auto 0; max-width:400px; font-size:17px; line-height:1.7; color:#7a6c5e">Your inquiry just landed in my inbox. I reply to every message personally within 48 hours, so keep an eye out.</p>
+            <a href="Aesthetics by Morgan.dc.html" class="abm-btn-secondary" style="margin-top:30px; display:inline-block">Back to home</a>
+          </div>
+        </sc-if>
+      </div>
+
+      <!-- ASIDE -->
+      <aside style="min-width:0">
+        <div style="position:relative; aspect-ratio:4/5; border-top-left-radius:9999px; border-top-right-radius:9999px; border-bottom-left-radius:16px; border-bottom-right-radius:16px; overflow:hidden; border:1px solid rgba(220,211,201,.7); margin-bottom:32px">
+          <img src="images/portrait-2.avif" alt="Morgan in her San Antonio content studio" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover" />
+        </div>
+        <p class="abm-eyebrow" style="margin:0 0 20px">Reach me directly</p>
+        <div style="display:flex; flex-direction:column; gap:18px">
+          <div>
+            <p style="margin:0; font-family:'Jost',sans-serif; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#8a7b6d">Email</p>
+            <a href="mailto:morgan@bartonstreetmarketing.com" style="font-size:17px; color:#2e2723; text-decoration:none; border-bottom:1px solid #dcd3c9; padding-bottom:1px" style-hover="color:#c08566">morgan@bartonstreetmarketing.com</a>
+          </div>
+          <div>
+            <p style="margin:0; font-family:'Jost',sans-serif; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#8a7b6d">Instagram</p>
+            <a href="https://instagram.com/aestheticsbymorgan.rn" style="font-size:17px; color:#2e2723; text-decoration:none; border-bottom:1px solid #dcd3c9; padding-bottom:1px" style-hover="color:#c08566">@aestheticsbymorgan.rn</a>
+          </div>
+          <div>
+            <p style="margin:0; font-family:'Jost',sans-serif; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#8a7b6d">Based in</p>
+            <p style="margin:0; font-size:17px; color:#2e2723">San Antonio, TX · plus remote</p>
+          </div>
+          <div>
+            <p style="margin:0; font-family:'Jost',sans-serif; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#8a7b6d">Response time</p>
+            <p style="margin:0; font-size:17px; color:#2e2723">Within 48 hours, personally</p>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <x-import component-from-global-scope="ABM.Footer" nav="{{ footerNav }}" hint-size="100%,360px"></x-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sent: false };
+
+  renderVals() {
+    return {
+      on: true,
+      off: false,
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      submit: (e) => { e.preventDefault(); this.setState({ sent: true }); window.scrollTo({ top: 0, behavior: "smooth" }); },
+      navLinks: [
+        { label: "home", href: "Aesthetics by Morgan.dc.html" },
+        { label: "services", href: "Services.dc.html" },
+        { label: "portfolio", href: "Aesthetics by Morgan.dc.html#portfolio" },
+        { label: "contact", href: "Contact.dc.html" }
+      ],
+      footerNav: [
+        { label: "Home", href: "Aesthetics by Morgan.dc.html" },
+        { label: "Services", href: "Services.dc.html" },
+        { label: "Portfolio", href: "Aesthetics by Morgan.dc.html#portfolio" },
+        { label: "Contact", href: "Contact.dc.html" },
+        { label: "Privacy Policy", href: "Privacy.dc.html" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

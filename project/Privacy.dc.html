@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="abm/aesthetics-by-morgan.css">
+<style>
+  html { scroll-behavior: smooth; }
+  .abm-btn-primary, .abm-btn-secondary { white-space: nowrap; }
+  header .font-display { white-space: nowrap; }
+  .abm-prose h2 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:400; font-size:clamp(26px,3.2vw,34px); line-height:1.15; color:#2e2723; margin:48px 0 14px; }
+  .abm-prose p { font-size:17px; line-height:1.8; color:#7a6c5e; margin:0 0 16px; }
+  .abm-prose a { color:#c08566; text-decoration:none; border-bottom:1px solid rgba(192,133,102,.4); }
+  .abm-prose ul { margin:0 0 16px; padding-left:20px; }
+  .abm-prose li { font-size:17px; line-height:1.8; color:#7a6c5e; margin-bottom:6px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+<script>
+(function(){
+  function ready(){ return window.React && window.React.createElement; }
+  function shim(){
+    var R = window.React; if(!R || R.jsx) return;
+    var c = R.createElement;
+    var j = function(type,cfg,key){
+      cfg = cfg || {};
+      var ch = cfg.children, props = {};
+      for (var k in cfg){ if (k!=='children') props[k]=cfg[k]; }
+      if (key!==undefined) props.key = key;
+      if (ch===undefined) return c(type,props);
+      return Array.isArray(ch) ? c.apply(null,[type,props].concat(ch)) : c(type,props,ch);
+    };
+    R.jsx = j; R.jsxs = j;
+  }
+  function load(){ shim(); var s=document.createElement('script'); s.src='abm/aesthetics-by-morgan.umd.cjs'; document.head.appendChild(s); }
+  if (ready()) load();
+  else { var t=setInterval(function(){ if(ready()){ clearInterval(t); load(); } }, 30); }
+})();
+</script>
+</helmet>
+<div class="abm-root" style="background:#f7f3ee; color:#2e2723; font-family:'Jost',system-ui,sans-serif; min-height:100vh">
+
+  <x-import component-from-global-scope="ABM.NavBar" cta-label="Book a call" cta-href="Contact.dc.html" links="{{ navLinks }}" hint-size="100%,80px"></x-import>
+
+  <section style="background:#efe6dc; padding:clamp(60px,8vw,104px) clamp(24px,5vw,40px) clamp(44px,6vw,64px)">
+    <div style="max-width:760px; margin:0 auto">
+      <p class="abm-eyebrow" style="margin:0 0 18px">Legal</p>
+      <h1 style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:400; font-size:clamp(40px,5.6vw,64px); line-height:1.04; margin:0; color:#2e2723">Privacy <span style="font-style:italic; color:#c08566">Policy</span></h1>
+      <p style="margin:20px 0 0; font-family:'Jost',sans-serif; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#8a7b6d">Last updated · January 2026</p>
+    </div>
+  </section>
+
+  <section style="background:#f7f3ee; padding:clamp(40px,6vw,72px) clamp(24px,5vw,40px) clamp(72px,10vw,120px)">
+    <div class="abm-prose" style="max-width:760px; margin:0 auto">
+      <p>Aesthetics by Morgan ("ABM," "I," or "me") respects your privacy. This policy explains what information I collect when you visit this site or inquire about services, how it is used, and the choices you have. By using this site, you agree to the practices described below.</p>
+
+      <h2>Information I collect</h2>
+      <p>I only collect what I need to respond to you and deliver services. This may include:</p>
+      <ul>
+        <li>Contact details you provide through the inquiry form, such as your name, email, phone number, and business information.</li>
+        <li>Details about your goals, services of interest, and social or website links you choose to share.</li>
+        <li>Basic, non-identifying analytics about how visitors use the site, such as pages viewed and general location.</li>
+      </ul>
+
+      <h2>How I use your information</h2>
+      <p>Your information is used to respond to inquiries, prepare proposals, schedule and deliver content services, send relevant updates you have asked for, and improve this site. I do not sell your information, and I do not share it except as needed to run my business, for example with trusted tools that help me manage scheduling, email, or payments.</p>
+
+      <h2>Photos and content</h2>
+      <p>Content created during a session belongs to your business per our agreement. With your permission, I may share select images or video in my portfolio and on social media. If you would prefer your content not be shared publicly, simply let me know and I will honor that.</p>
+
+      <h2>Cookies and analytics</h2>
+      <p>This site may use cookies and similar technologies to understand traffic and improve your experience. You can disable cookies in your browser settings; some features may not work as intended if you do.</p>
+
+      <h2>Your choices</h2>
+      <p>You may request to access, update, or delete the personal information I hold about you, and you can opt out of any non-essential emails at any time. To make a request, email me using the address below.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about this policy or your information are always welcome. Reach me at <a href="mailto:morgan@bartonstreetmarketing.com">morgan@bartonstreetmarketing.com</a>.</p>
+
+      <div style="width:48px; height:2px; background:#c08566; margin:48px 0 0"></div>
+    </div>
+  </section>
+
+  <x-import component-from-global-scope="ABM.Footer" nav="{{ footerNav }}" hint-size="100%,360px"></x-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      navLinks: [
+        { label: "home", href: "Aesthetics by Morgan.dc.html" },
+        { label: "services", href: "Services.dc.html" },
+        { label: "portfolio", href: "Aesthetics by Morgan.dc.html#portfolio" },
+        { label: "contact", href: "Contact.dc.html" }
+      ],
+      footerNav: [
+        { label: "Home", href: "Aesthetics by Morgan.dc.html" },
+        { label: "Services", href: "Services.dc.html" },
+        { label: "Portfolio", href: "Aesthetics by Morgan.dc.html#portfolio" },
+        { label: "Contact", href: "Contact.dc.html" },
+        { label: "Privacy Policy", href: "Privacy.dc.html" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
