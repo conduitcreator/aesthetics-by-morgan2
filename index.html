@@ -43,7 +43,7 @@
     .abm-ornament .line { height: 1px; flex: 1; }
     .abm-ornament .l1 { background: linear-gradient(90deg, transparent, #dcd3c9); }
     .abm-ornament .l2 { background: linear-gradient(90deg, #dcd3c9, transparent); }
-    .abm-ornament .dot { width: 7px; height: 7px; transform: rotate(45deg); border: 1px solid #c2703d; flex: none; }
+    .abm-ornament .dot { width: 7px; height: 7px; transform: rotate(45deg); border: 1px solid #c08566; flex: none; }
 
     /* Seal spin */
     @keyframes abmSpin { to { transform: rotate(360deg); } }
@@ -58,7 +58,7 @@
     @media (min-width: 1024px) { .abm-hero-sidelabel { display: block; } }
 
     /* Slider button hover */
-    .slider-btn:hover { background: #c2703d !important; border-color: #c2703d !important; color: #f7f3ee !important; }
+    .slider-btn:hover { background: #c08566 !important; border-color: #c08566 !important; color: #f7f3ee !important; }
 
     /* Hero secondary button ivory override */
     .btn-ivory { border-color: #f7f3ee !important; color: #f7f3ee !important; }
@@ -71,27 +71,16 @@
       #hero-bg { inset: 0; height: 100%; }
     }
 
-    /* ===== Bold dark theme (from Morgan's content) ===== */
-    .abm-root{ background:#16110e; color:#e7dccf; }
+    /* Mixed bold theme */
     .abm-eyebrow{ color:#c2703d !important; }
-    .abm-root :where(h1,h2,h3,h4){ color:#f7f3ee; }
-    .text-espresso{ color:#f7f3ee !important; }
-    .text-taupe-ink{ color:#b6a596 !important; }
-    .text-h3{ color:#f7f3ee !important; }
-    .abm-card, .abm-card-ivory{ background:#1f1813 !important; border-color:rgba(247,243,238,.10) !important; }
     .abm-btn-primary{ background:#c2703d !important; color:#fff !important; }
     .abm-btn-primary:hover{ background:#a85f30 !important; }
-    .abm-btn-secondary{ border-color:rgba(247,243,238,.45) !important; color:#f7f3ee !important; background:transparent !important; }
-    .abm-btn-secondary:hover{ background:#f7f3ee !important; color:#16110e !important; }
-    .abm-ornament .l1{ background:linear-gradient(90deg,transparent,rgba(247,243,238,.28)) !important; }
-    .abm-ornament .l2{ background:linear-gradient(90deg,rgba(247,243,238,.28),transparent) !important; }
-    #abm-nav.nav-solid{ background:#16110e !important; border-bottom:1px solid rgba(247,243,238,.12) !important; }
-    #abm-nav.nav-solid .nav-link{ color:#f7f3ee !important; }
-    #abm-nav.nav-solid .nav-subtitle{ color:#c2703d !important; }
+    .abm-card-ivory{ background:#ffffff !important; border-color:#e7e2da !important; }
+    .abm-card{ background:#ffffff !important; border-color:#e7e2da !important; }
   </style>
 </head>
 <body>
-<div class="abm-root" style="background:#16110e;min-height:100vh">
+<div class="abm-root" style="background:#faf9f7;min-height:100vh">
 
 <!-- ============ NAVBAR ============ -->
 <header id="abm-nav" class="nav-transparent">
@@ -124,7 +113,7 @@
         </svg>
       </button>
     </div>
-    <div id="nav-mobile" class="md:hidden hidden" style="background:#16110e;border-top:1px solid rgba(247,243,238,.12)">
+    <div id="nav-mobile" class="md:hidden hidden" style="background:#f7f3ee;border-top:1px solid rgba(220,211,201,.7)">
       <div class="mx-auto w-full max-w-6xl px-6 flex flex-col py-4">
         <a href="index.html" class="font-body text-sm py-3 text-espresso no-underline">home</a>
         <a href="services.html" class="font-body text-sm py-3 text-espresso no-underline">services</a>
@@ -141,7 +130,7 @@
   <div id="hero-bg-wrap">
     <img id="hero-bg" src="images/portrait-3.webp" alt="Morgan editing content at a bright studio desk" />
   </div>
-  <div style="position:absolute;inset:0;background:#2e272373" aria-hidden="true"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,15,12,.30) 0%,rgba(20,15,12,.40) 40%,rgba(20,15,12,.70) 100%)" aria-hidden="true"></div>
   <div class="abm-hero-sidelabel" aria-hidden="true" style="position:absolute;left:clamp(14px,2.6vw,32px);top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:rgba(247,243,238,.7);z-index:20">Est. San Antonio · Aesthetic Providers</div>
   <div aria-hidden="true" style="position:absolute;bottom:100px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:9px;z-index:20">
     <span style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(247,243,238,.72)">Scroll</span>
@@ -162,19 +151,19 @@
   <!-- Hero base: single signature curve -->
   <div aria-hidden="true" style="position:absolute;bottom:-1px;left:0;right:0;z-index:15;line-height:0">
     <svg viewBox="0 0 1440 90" preserveAspectRatio="none" style="width:100%;height:clamp(48px,6vw,90px);display:block">
-      <path d="M0,90 L0,62 C480,2 960,2 1440,62 L1440,90 Z" fill="#16110e"/>
+      <path d="M0,90 L0,62 C480,2 960,2 1440,62 L1440,90 Z" fill="#faf9f7"/>
     </svg>
   </div>
 </section>
 
 <!-- ============ POSITIONING ============ -->
-<section style="background:#16110e;padding:clamp(56px,9vw,112px) clamp(24px,5vw,40px) clamp(64px,10vw,120px)">
+<section style="background:#faf9f7;padding:clamp(56px,9vw,112px) clamp(24px,5vw,40px) clamp(64px,10vw,120px)">
   <div style="max-width:760px;margin:0 auto;text-align:center">
     <p class="abm-eyebrow abm-reveal" style="margin:0 0 20px">01 — The approach</p>
     <h2 class="abm-reveal" data-delay="1" style="font-weight:400;font-size:clamp(34px,4.4vw,50px);line-height:1.1;margin:0">
       Show up like the expert you are,<span class="block italic" style="color:#c2703d">without living in your feed.</span>
     </h2>
-    <p class="abm-reveal" data-delay="2" style="margin:28px auto 0;max-width:600px;font-size:18px;line-height:1.75;color:#b6a596">You are busy running a practice and treating clients. I handle the content, the strategy, and the consistency, so your presence online finally matches the quality of your work. Warm, intentional, and unmistakably you.</p>
+    <p class="abm-reveal" data-delay="2" style="margin:28px auto 0;max-width:600px;font-size:18px;line-height:1.75;color:#7a6c5e">You are busy running a practice and treating clients. I handle the content, the strategy, and the consistency, so your presence online finally matches the quality of your work. Warm, intentional, and unmistakably you.</p>
     <div class="abm-reveal" data-delay="2" style="width:48px;height:2px;background:#c2703d;margin:36px auto 0"></div>
   </div>
 </section>
@@ -191,7 +180,7 @@
 </section>
 
 <!-- ============ SERVICES ============ -->
-<section id="services" style="background:#1a1410;padding:clamp(48px,8vw,96px) clamp(24px,5vw,40px) clamp(72px,11vw,128px)">
+<section id="services" style="background:#faf9f7;padding:clamp(48px,8vw,96px) clamp(24px,5vw,40px) clamp(72px,11vw,128px)">
   <div style="max-width:1152px;margin:0 auto">
     <div style="max-width:640px;margin:0 auto clamp(40px,6vw,64px);text-align:center">
       <div class="abm-ornament abm-reveal" aria-hidden="true"><span class="line l1"></span><span class="dot"></span><span class="line l2"></span></div>
@@ -238,146 +227,146 @@
     <div style="max-width:680px">
       <p class="abm-eyebrow abm-reveal" style="margin:0 0 16px">03 — The work</p>
       <h2 class="abm-reveal" data-delay="1" style="font-weight:400;font-size:clamp(34px,4.6vw,52px);line-height:1.08;margin:0">
-        Scroll-stopping covers,<br><span class="italic" style="color:#c2703d">made for providers like you.</span>
+        Scroll-stopping covers,<br><span class="italic" style="color:#e0a17a">made for providers like you.</span>
       </h2>
     </div>
     <p class="abm-reveal" data-delay="2" style="margin:0 0 6px;max-width:330px;font-size:16px;line-height:1.7;color:#b6a596">A selection of opening frames from carousels I have produced. Each one is built to stop the thumb and start the booking.</p>
   </div>
   <div id="cover-track" class="abm-slider" style="display:flex;gap:clamp(16px,1.8vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:clamp(24px,5vw,48px);padding:4px clamp(24px,5vw,48px)">
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/skincare-myths.webp" alt="Skincare myths carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">Skincare Education</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/lip-filler.webp" alt="Lip filler carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">Lip Filler</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/sculptra-secrets.webp" alt="Sculptra secrets carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">Sculptra</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/frozen-forehead.webp" alt="Frozen forehead tox carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">Tox / Forehead</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/brow-lift.webp" alt="Brow lift carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">Brow Lift</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/hydrafacial.webp" alt="HydraFacial carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">HydraFacial</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/behind-the-table.webp" alt="Behind the table carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">Behind the Table</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/intimate-brightening.webp" alt="Intimate brightening carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">Intimate Brightening</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/microneedling.webp" alt="Microneedling carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">Microneedling</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/nad.webp" alt="NAD+ therapy carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">NAD+ Therapy</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/facial-balancing.webp" alt="Facial balancing carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">Facial Balancing</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/spray-tanning.webp" alt="Spray tanning carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">Spray Tan</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/aesthetic-wellness.webp" alt="Aesthetic wellness carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">Aesthetic Wellness</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/aging-skin.webp" alt="Aging skin carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">Aging Skin</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/co2-laser.webp" alt="CO2 laser carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">CO2 Laser</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/chin-tox.webp" alt="Chin tox carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">Chin Tox</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/face-reality.webp" alt="Face Reality carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">Face Reality</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/head-to-toe.webp" alt="Head to toe carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">Head to Toe</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/iv-hydration.webp" alt="IV hydration carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">IV Hydration</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/in-your-30s.webp" alt="In your 30s carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">In Your 30s</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/red-light-therapy.webp" alt="Red light therapy carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">Red Light Therapy</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/too-far-gone.webp" alt="Too far gone carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">Too Far Gone</figcaption>
     </figure>
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
-      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(220,211,201,.7);background:#1a1410">
+      <div style="position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:1px solid rgba(247,243,238,.14);background:#221a15">
         <img src="covers/undereye-filler.webp" alt="Undereye filler carousel cover" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <figcaption style="margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#b6a596">Undereye Filler</figcaption>
@@ -395,21 +384,21 @@
 </section>
 
 <!-- ============ WORK WITH MORGAN ============ -->
-<section style="background:#1a1410;padding:clamp(48px,8vw,96px) clamp(24px,5vw,40px) clamp(72px,11vw,128px)">
+<section style="background:#faf9f7;padding:clamp(48px,8vw,96px) clamp(24px,5vw,40px) clamp(72px,11vw,128px)">
   <div style="max-width:1152px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5vw,72px);align-items:center">
     <div class="abm-reveal" style="position:relative">
       <div style="position:relative;aspect-ratio:4/5;border-top-left-radius:9999px;border-top-right-radius:9999px;border-bottom-left-radius:16px;border-bottom-right-radius:16px;overflow:hidden;border:1px solid rgba(220,211,201,.7)">
         <img src="images/work-with-morgan.webp" alt="Morgan, founder of Aesthetics by Morgan, holding a camera" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <div aria-hidden="true" style="position:absolute;left:-8px;bottom:-12px;width:38%;max-width:168px;background:#f7f3ee;padding:8px 8px 28px;border:1px solid rgba(220,211,201,.7);box-shadow:0 12px 26px rgba(46,39,35,.13);transform:rotate(-5deg);z-index:3">
-        <div style="aspect-ratio:4/5;overflow:hidden;background:#1a1410">
+        <div style="aspect-ratio:4/5;overflow:hidden;background:#efe6dc">
           <img src="images/portrait-1.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block" />
         </div>
       </div>
       <div style="position:absolute;right:-14px;top:16%;width:116px;height:116px;z-index:4;display:grid;place-items:center" aria-hidden="true">
         <svg class="abm-seal-spin" viewBox="0 0 200 200" style="position:absolute;inset:0;width:100%;height:100%">
           <circle cx="100" cy="100" r="99" fill="#f7f3ee"/>
-          <circle cx="100" cy="100" r="91" fill="none" stroke="#c2703d" stroke-width="1"/>
+          <circle cx="100" cy="100" r="91" fill="none" stroke="#c08566" stroke-width="1"/>
           <defs><path id="sealRing" d="M100,100 m-73,0 a73,73 0 1,1 146,0 a73,73 0 1,1 -146,0"/></defs>
           <text fill="#7a6c5e" font-family="Jost, sans-serif" font-size="12" letter-spacing="3" font-weight="500">
             <textPath href="#sealRing" startOffset="0">AESTHETICS BY MORGAN · SAN ANTONIO · </textPath>
@@ -423,9 +412,9 @@
       <h2 class="abm-reveal" data-delay="1" style="font-weight:400;font-size:clamp(34px,4.4vw,46px);line-height:1.1;margin:0">
         Strategy first.<br><span class="italic" style="color:#c2703d">Camera always.</span>
       </h2>
-      <p class="abm-reveal" data-delay="1" style="margin:24px 0 0;font-size:18px;line-height:1.75;color:#b6a596">I am a content creator and strategist for aesthetic providers across San Antonio and beyond. I built Aesthetics by Morgan because talented injectors and estheticians deserve a presence online that feels as elevated as the work they do in the room.</p>
-      <p class="abm-reveal" data-delay="2" style="margin:18px 0 0;font-size:18px;line-height:1.75;color:#b6a596">Every session is calm, directed, and built around you, so the content feels natural and the strategy actually converts.</p>
-      <p class="abm-reveal" data-delay="2" style="margin:28px 0 0;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#b6a596">Based in San Antonio · Available for travel</p>
+      <p class="abm-reveal" data-delay="1" style="margin:24px 0 0;font-size:18px;line-height:1.75;color:#7a6c5e">I am a content creator and strategist for aesthetic providers across San Antonio and beyond. I built Aesthetics by Morgan because talented injectors and estheticians deserve a presence online that feels as elevated as the work they do in the room.</p>
+      <p class="abm-reveal" data-delay="2" style="margin:18px 0 0;font-size:18px;line-height:1.75;color:#7a6c5e">Every session is calm, directed, and built around you, so the content feels natural and the strategy actually converts.</p>
+      <p class="abm-reveal" data-delay="2" style="margin:28px 0 0;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#8a7b6d">Based in San Antonio · Available for travel</p>
       <a href="contact.html" class="abm-btn-secondary abm-reveal" data-delay="2" style="margin-top:24px;display:inline-flex">Let's work together</a>
     </div>
   </div>
@@ -447,7 +436,7 @@
 </section>
 
 <!-- ============ TESTIMONIALS ============ -->
-<section style="background:#16110e;padding:clamp(80px,12vw,140px) clamp(24px,5vw,40px) clamp(72px,11vw,128px)">
+<section style="background:#faf9f7;padding:clamp(80px,12vw,140px) clamp(24px,5vw,40px) clamp(72px,11vw,128px)">
   <div style="max-width:1152px;margin:0 auto">
     <div style="max-width:640px;margin:0 auto clamp(40px,6vw,64px);text-align:center">
       <div class="abm-ornament abm-reveal" aria-hidden="true"><span class="line l1"></span><span class="dot"></span><span class="line l2"></span></div>
@@ -458,24 +447,24 @@
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(20px,2.4vw,32px);align-items:start">
       <figure class="abm-card abm-lift abm-reveal" style="display:flex;flex-direction:column;margin:0">
-        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;line-height:1.36;color:#f3ede5;margin:0">"You can give her a skeleton outline of a vision and she brings it fully to life, and then some. It took me two years to find the right person, and I won't be using anyone else."</p>
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;line-height:1.36;color:#2e2723;margin:0">"You can give her a skeleton outline of a vision and she brings it fully to life, and then some. It took me two years to find the right person, and I won't be using anyone else."</p>
         <figcaption style="margin-top:24px">
-          <p style="font-family:'Jost',sans-serif;font-weight:500;margin:0;color:#f7f3ee">Tiffany Rosenberg</p>
-          <p style="font-family:'Jost',sans-serif;font-size:14px;margin:2px 0 0;color:#b6a596">Aesthetic provider</p>
+          <p style="font-family:'Jost',sans-serif;font-weight:500;margin:0;color:#2e2723">Tiffany Rosenberg</p>
+          <p style="font-family:'Jost',sans-serif;font-size:14px;margin:2px 0 0;color:#7a6c5e">Aesthetic provider</p>
         </figcaption>
       </figure>
       <figure class="abm-card abm-lift abm-reveal" data-delay="1" style="display:flex;flex-direction:column;margin:0">
-        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;line-height:1.36;color:#f3ede5;margin:0">"She understood my brand, my voice, and exactly what I needed with minimal direction, then knocked it out of the park on the first try. I've reclaimed my time outside the office."</p>
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;line-height:1.36;color:#2e2723;margin:0">"She understood my brand, my voice, and exactly what I needed with minimal direction, then knocked it out of the park on the first try. I've reclaimed my time outside the office."</p>
         <figcaption style="margin-top:24px">
-          <p style="font-family:'Jost',sans-serif;font-weight:500;margin:0;color:#f7f3ee">Tiffani Terrell</p>
-          <p style="font-family:'Jost',sans-serif;font-size:14px;margin:2px 0 0;color:#b6a596">Aesthetic provider</p>
+          <p style="font-family:'Jost',sans-serif;font-weight:500;margin:0;color:#2e2723">Tiffani Terrell</p>
+          <p style="font-family:'Jost',sans-serif;font-size:14px;margin:2px 0 0;color:#7a6c5e">Aesthetic provider</p>
         </figcaption>
       </figure>
       <figure class="abm-card abm-lift abm-reveal" data-delay="2" style="display:flex;flex-direction:column;margin:0">
-        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;line-height:1.36;color:#f3ede5;margin:0">"You can hand her a messy brain dump and she turns it into content that sounds like you, looks elevated, and actually converts. She didn't change my brand, she made it make sense."</p>
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;line-height:1.36;color:#2e2723;margin:0">"You can hand her a messy brain dump and she turns it into content that sounds like you, looks elevated, and actually converts. She didn't change my brand, she made it make sense."</p>
         <figcaption style="margin-top:24px">
-          <p style="font-family:'Jost',sans-serif;font-weight:500;margin:0;color:#f7f3ee">Taylor Brooks</p>
-          <p style="font-family:'Jost',sans-serif;font-size:14px;margin:2px 0 0;color:#b6a596">Aesthetic provider</p>
+          <p style="font-family:'Jost',sans-serif;font-weight:500;margin:0;color:#2e2723">Taylor Brooks</p>
+          <p style="font-family:'Jost',sans-serif;font-size:14px;margin:2px 0 0;color:#7a6c5e">Aesthetic provider</p>
         </figcaption>
       </figure>
     </div>
