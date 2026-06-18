@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>try{if(sessionStorage.getItem("abmIntroSeen")){document.documentElement.classList.add("intro-seen");}}catch(e){}</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aesthetics by Morgan · Content &amp; Strategy for Aesthetic Providers</title>
@@ -92,9 +93,37 @@
     #top .abm-btn-primary:hover, .cta-dark .abm-btn-primary:hover, #abm-nav.nav-transparent .abm-btn-primary:hover{ background:#e3c9c2 !important; color:#2e2723 !important; }
     .abm-card-ivory{ background:#ffffff !important; border-color:#e7e2da !important; }
     .abm-card{ background:#ffffff !important; border-color:#e7e2da !important; }
+    /* Page-load intro */
+    #abm-intro{ position:fixed; inset:0; z-index:200; background:#16110e; display:flex; align-items:center; justify-content:center; }
+    .intro-seen #abm-intro{ display:none !important; }
+    #abm-intro .ii{ text-align:center; padding:0 24px; }
+    #abm-intro .seal{ display:block; margin:0 auto 20px; }
+    #abm-intro .seal .ring{ stroke-dasharray:142; stroke-dashoffset:142; animation:abmRing 1s ease forwards .15s; }
+    #abm-intro .word{ font-family:'Cormorant Garamond',Georgia,serif; font-weight:400; font-size:clamp(30px,5.4vw,54px); line-height:1; color:#f7f3ee; opacity:0; animation:abmIntroUp .8s ease forwards .5s; }
+    #abm-intro .word em{ font-style:italic; color:#e3c9c2; }
+    #abm-intro .sub{ margin-top:12px; font-family:'Jost',sans-serif; font-size:11px; letter-spacing:.32em; text-transform:uppercase; color:rgba(247,243,238,.6); opacity:0; animation:abmIntroUp .8s ease forwards .72s; }
+    #abm-intro.is-leaving{ transform:translateY(-101%); transition:transform .8s cubic-bezier(.76,0,.24,1); }
+    @keyframes abmRing{ to{ stroke-dashoffset:0; } }
+    @keyframes abmIntroUp{ from{ opacity:0; transform:translateY(14px); } to{ opacity:1; transform:none; } }
+    body.intro-lock{ overflow:hidden; }
+    @media (prefers-reduced-motion: reduce){
+      #abm-intro .seal .ring,#abm-intro .word,#abm-intro .sub{ animation:none; opacity:1; stroke-dashoffset:0; }
+    }
   </style>
 </head>
 <body>
+<div id="abm-intro" aria-hidden="true">
+  <div class="ii">
+    <svg class="seal" viewBox="0 0 48 48" width="88" height="88" aria-hidden="true">
+      <circle class="ring" cx="24" cy="24" r="22.5" fill="none" stroke="#e3c9c2" stroke-width="1"/>
+      <circle cx="24" cy="6.5" r="1.6" fill="#e3c9c2"/>
+      <text x="24" y="24" text-anchor="middle" dominant-baseline="central" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-size="18" letter-spacing="0.5" fill="#f7f3ee">abm</text>
+    </svg>
+    <div class="word">Aesthetics <em>by</em> Morgan</div>
+    <div class="sub">San Antonio · Aesthetic Content</div>
+  </div>
+</div>
+<noscript><style>#abm-intro{display:none !important}</style></noscript>
 <div class="abm-root" style="background:#faf9f7;min-height:100vh">
 
 <!-- ============ NAVBAR ============ -->
@@ -542,6 +571,18 @@
 
 </div>
 <script>
+  // Page-load intro: once per session, respects reduced motion
+  (function(){
+    var intro=document.getElementById('abm-intro'); if(!intro) return;
+    var seen=false; try{ seen=sessionStorage.getItem('abmIntroSeen'); }catch(e){}
+    if(seen){ if(intro.parentNode) intro.parentNode.removeChild(intro); return; }
+    var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.body.classList.add('intro-lock');
+    function finish(){ try{ sessionStorage.setItem('abmIntroSeen','1'); }catch(e){} document.body.classList.remove('intro-lock'); if(intro.parentNode) intro.parentNode.removeChild(intro); }
+    if(reduce){ setTimeout(function(){ intro.style.transition='opacity .4s'; intro.style.opacity='0'; setTimeout(finish,420); },600); return; }
+    setTimeout(function(){ intro.classList.add('is-leaving'); setTimeout(finish,850); },1650);
+  })();
+
   // Nav scroll + parallax in single listener
   const nav = document.getElementById('abm-nav');
   const heroBg = document.getElementById('hero-bg');
