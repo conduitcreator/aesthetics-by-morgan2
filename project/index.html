@@ -13,7 +13,7 @@
   <style>
     html { scroll-behavior: smooth; }
     body { margin: 0; }
-    :root { --abm-rust: #c2703d; --page: #faf9f7; }
+    :root { --abm-rust: #c2703d; }
 
     /* Expressive type — drawn from Morgan's content */
     .font-script { font-family: 'Pinyon Script', cursive; font-weight: 400; line-height: .9; }
@@ -28,7 +28,7 @@
     #abm-nav.nav-transparent { background: transparent; border-bottom: 1px solid transparent; }
     #abm-nav.nav-transparent .nav-link { color: #f7f3ee; }
     #abm-nav.nav-transparent .nav-subtitle { color: rgba(247,243,238,.7); }
-    #abm-nav.nav-solid { background: var(--page); border-bottom: 1px solid rgba(220,211,201,.7); }
+    #abm-nav.nav-solid { background: #f7f3ee; border-bottom: 1px solid rgba(220,211,201,.7); }
     #abm-nav.nav-solid .nav-link { color: #2e2723; }
     #abm-nav.nav-solid .nav-subtitle { color: #8a7b6d; }
     .abm-btn-primary, .abm-btn-secondary { white-space: nowrap; }
@@ -141,7 +141,7 @@
   </div>
 </div>
 <noscript><style>#abm-intro{display:none !important}</style></noscript>
-<div class="abm-root" style="background:var(--page);min-height:100vh">
+<div class="abm-root" style="background:#faf9f7;min-height:100vh">
 
 <!-- ============ NAVBAR ============ -->
 <header id="abm-nav" class="nav-transparent">
@@ -220,7 +220,7 @@
 </section>
 
 <!-- ============ POSITIONING ============ -->
-<section style="background:var(--page);padding:clamp(56px,9vw,112px) clamp(24px,5vw,40px) clamp(64px,10vw,120px)">
+<section style="background:#faf9f7;padding:clamp(56px,9vw,112px) clamp(24px,5vw,40px) clamp(64px,10vw,120px)">
   <div style="max-width:760px;margin:0 auto;text-align:center">
     <p class="abm-eyebrow abm-reveal" style="margin:0 0 20px">01 — The approach</p>
     <h2 class="abm-words" data-delay="1" style="font-weight:400;font-size:clamp(34px,4.4vw,50px);line-height:1.1;margin:0">
@@ -243,7 +243,7 @@
 </section>
 
 <!-- ============ SERVICES ============ -->
-<section id="services" style="background:var(--page);padding:clamp(48px,8vw,96px) clamp(24px,5vw,40px) clamp(72px,11vw,128px)">
+<section id="services" style="background:#faf9f7;padding:clamp(48px,8vw,96px) clamp(24px,5vw,40px) clamp(72px,11vw,128px)">
   <div style="max-width:1152px;margin:0 auto">
     <div style="max-width:640px;margin:0 auto clamp(40px,6vw,64px);text-align:center">
       <div class="abm-ornament abm-reveal" aria-hidden="true"><span class="line l1"></span><span class="dot"></span><span class="line l2"></span></div>
@@ -294,7 +294,7 @@
 </div>
 
 <!-- ============ PORTFOLIO — COVER SLIDER ============ -->
-<section id="portfolio" style="background:var(--page);padding:clamp(48px,8vw,96px) 0 clamp(72px,11vw,128px);overflow:hidden">
+<section id="portfolio" style="background:#faf9f7;padding:clamp(48px,8vw,96px) 0 clamp(72px,11vw,128px);overflow:hidden">
   <div style="max-width:1200px;margin:0 auto clamp(32px,4.5vw,52px);padding:0 clamp(24px,5vw,48px);display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap">
     <div style="max-width:680px">
       <p class="abm-eyebrow abm-reveal" style="margin:0 0 16px">03 — The work</p>
@@ -456,7 +456,7 @@
 </section>
 
 <!-- ============ WORK WITH MORGAN ============ -->
-<section style="background:var(--page);padding:clamp(48px,8vw,96px) clamp(24px,5vw,40px) clamp(72px,11vw,128px)">
+<section style="background:#faf9f7;padding:clamp(48px,8vw,96px) clamp(24px,5vw,40px) clamp(72px,11vw,128px)">
   <div style="max-width:1152px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5vw,72px);align-items:center">
     <div class="abm-reveal" style="position:relative">
       <div style="position:relative;aspect-ratio:4/5;border-top-left-radius:9999px;border-top-right-radius:9999px;border-bottom-left-radius:16px;border-bottom-right-radius:16px;overflow:hidden;border:1px solid rgba(220,211,201,.7)">
@@ -508,7 +508,7 @@
 </section>
 
 <!-- ============ TESTIMONIALS ============ -->
-<section style="background:var(--page);padding:clamp(80px,12vw,140px) clamp(24px,5vw,40px) clamp(72px,11vw,128px)">
+<section style="background:#faf9f7;padding:clamp(80px,12vw,140px) clamp(24px,5vw,40px) clamp(72px,11vw,128px)">
   <div style="max-width:1152px;margin:0 auto">
     <div style="max-width:640px;margin:0 auto clamp(40px,6vw,64px);text-align:center">
       <div class="abm-ornament abm-reveal" aria-hidden="true"><span class="line l1"></span><span class="dot"></span><span class="line l2"></span></div>
@@ -617,16 +617,6 @@
     } else {
       nav.classList.remove('nav-solid');
       nav.classList.add('nav-transparent');
-    }
-
-    // Scroll-progress color shift: light sections warm cream -> nude
-    if (!reduceMotion) {
-      var max = document.documentElement.scrollHeight - window.innerHeight;
-      var t = max > 0 ? Math.min(1, Math.max(0, y / max)) : 0;
-      var r = Math.round(250 + (236 - 250) * t);
-      var g = Math.round(249 + (221 - 249) * t);
-      var bl = Math.round(247 + (205 - 247) * t);
-      document.documentElement.style.setProperty('--page', 'rgb(' + r + ',' + g + ',' + bl + ')');
     }
 
     // Multi-layer parallax (only while hero is visible)
