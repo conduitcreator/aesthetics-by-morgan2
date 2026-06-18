@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aesthetics by Morgan · Content Studio for Aesthetic Providers</title>
-  <meta name="description" content="In-person content creation and ongoing strategy for injectors, estheticians, and medspas in San Antonio. Show up consistently online without doing it all yourself.">
+  <title>Aesthetics by Morgan · Content &amp; Strategy for Aesthetic Providers</title>
+  <meta name="description" content="In-person content creation and strategy for aesthetic providers in San Antonio. Injectors, estheticians, and medspas — show up consistently without doing it all yourself.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="abm/aesthetics-by-morgan.css">
@@ -12,7 +12,7 @@
     html { scroll-behavior: smooth; }
     body { margin: 0; }
 
-    /* Fixed navbar */
+    /* Navbar */
     #abm-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; transition: background-color .25s ease, border-color .25s ease; }
     #abm-nav.nav-transparent { background: transparent; border-bottom: 1px solid transparent; }
     #abm-nav.nav-transparent .nav-link { color: #f7f3ee; }
@@ -22,9 +22,19 @@
     #abm-nav.nav-solid .nav-subtitle { color: #8a7b6d; }
     .abm-btn-primary, .abm-btn-secondary { white-space: nowrap; }
 
-    /* Animations */
-    @keyframes abmRise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
-    .abm-rise { animation: abmRise .7s ease both; }
+    /* Parallax */
+    #hero-bg-wrap { position: absolute; inset: 0; overflow: hidden; }
+    #hero-bg { position: absolute; inset: -15% 0; width: 100%; height: 130%; object-fit: cover; will-change: transform; }
+
+    /* Scroll reveal */
+    .abm-reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+    .abm-reveal.in-view { opacity: 1; transform: none; }
+    .abm-reveal[data-delay="1"] { transition-delay: .12s; }
+    .abm-reveal[data-delay="2"] { transition-delay: .24s; }
+
+    /* Wave dividers */
+    .abm-wave { display: block; overflow: hidden; line-height: 0; }
+    .abm-wave svg { display: block; width: 100%; }
 
     /* Seal spin */
     @keyframes abmSpin { to { transform: rotate(360deg); } }
@@ -48,7 +58,8 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .abm-seal-spin { animation: none; }
-      .abm-rise { animation: none; opacity: 1; }
+      .abm-reveal { opacity: 1; transform: none; transition: none; }
+      #hero-bg { inset: 0; height: 100%; }
     }
   </style>
 </head>
@@ -67,7 +78,7 @@
         </svg>
         <span class="block">
           <span class="block font-display md:text-[1.625rem] text-2xl tracking-wide nav-link" style="white-space:nowrap">Aesthetics <em>by</em> Morgan</span>
-          <span class="block abm-eyebrow mt-1 nav-subtitle">San Antonio · content studio</span>
+          <span class="block abm-eyebrow mt-1 nav-subtitle">San Antonio · aesthetic content</span>
         </span>
       </a>
       <div class="hidden md:flex items-center gap-9">
@@ -99,51 +110,66 @@
 </header>
 
 <!-- ============ HERO ============ -->
-<section id="top" class="relative flex items-center overflow-hidden" style="min-height:94svh">
-  <img src="images/portrait-3.avif" alt="Morgan editing content at a bright studio desk" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+<section id="top" class="relative flex items-center" style="min-height:94svh;overflow:hidden">
+  <div id="hero-bg-wrap">
+    <img id="hero-bg" src="images/portrait-3.avif" alt="Morgan editing content at a bright studio desk" />
+  </div>
   <div style="position:absolute;inset:0;background:#2e272373" aria-hidden="true"></div>
-  <div class="abm-hero-sidelabel" aria-hidden="true" style="position:absolute;left:clamp(14px,2.6vw,32px);top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:rgba(247,243,238,.7);z-index:20">Est. San Antonio · Content Studio</div>
-  <div aria-hidden="true" style="position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:9px;z-index:20">
+  <div class="abm-hero-sidelabel" aria-hidden="true" style="position:absolute;left:clamp(14px,2.6vw,32px);top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:rgba(247,243,238,.7);z-index:20">Est. San Antonio · Aesthetic Providers</div>
+  <div aria-hidden="true" style="position:absolute;bottom:100px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:9px;z-index:20">
     <span style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(247,243,238,.72)">Scroll</span>
     <span style="width:1px;height:34px;background:linear-gradient(rgba(247,243,238,.75),rgba(247,243,238,0))"></span>
   </div>
   <div class="relative z-10 mx-auto w-full max-w-6xl px-6 md:px-10 pt-28 pb-24">
-    <p class="abm-eyebrow text-blush mb-6">Content studio for aesthetic providers</p>
+    <p class="abm-eyebrow text-blush mb-6">For aesthetic providers</p>
     <h1 class="leading-[1.02]">
       <span class="block text-5xl sm:text-6xl md:text-hero font-display font-normal text-ivory">Content that captures.</span>
       <span class="block text-5xl sm:text-6xl md:text-hero font-display italic text-ivory/85">Strategy that converts.</span>
     </h1>
-    <p class="mt-7 max-w-xl text-ivory/90" style="font-size:18px;line-height:1.75">In-person content creation and ongoing strategy for injectors, estheticians, and medspas. Show up consistently online without doing it all yourself.</p>
+    <p class="mt-7 max-w-xl text-ivory/90" style="font-size:18px;line-height:1.75">In-person content creation and strategy for aesthetic providers — injectors, estheticians, medspas, and beyond. Show up consistently online without doing it all yourself.</p>
     <div class="mt-9 flex flex-wrap items-center gap-4">
       <a href="contact.html" class="abm-btn-primary">Book a call</a>
       <a href="services.html" class="abm-btn-secondary btn-ivory">View services</a>
     </div>
   </div>
-</section>
-
-<!-- ============ POSITIONING ============ -->
-<section style="background:#f7f3ee;padding:clamp(72px,11vw,128px) clamp(24px,5vw,40px)">
-  <div class="abm-rise" style="max-width:760px;margin:0 auto;text-align:center">
-    <p class="abm-eyebrow" style="margin:0 0 20px">01 — The approach</p>
-    <h2 style="font-weight:400;font-size:clamp(34px,4.4vw,50px);line-height:1.1;margin:0">
-      Show up like the expert you are,<span class="block italic" style="color:#c08566">without living in your feed.</span>
-    </h2>
-    <p style="margin:28px auto 0;max-width:600px;font-size:18px;line-height:1.75;color:#7a6c5e">You are busy running a practice and treating clients. I handle the content, the strategy, and the consistency, so your presence online finally matches the quality of your work. Warm, intentional, and unmistakably you.</p>
-    <div style="width:48px;height:2px;background:#c08566;margin:36px auto 0"></div>
+  <!-- Wave: hero → ivory -->
+  <div aria-hidden="true" style="position:absolute;bottom:0;left:0;right:0;z-index:15;line-height:0">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="width:100%;height:80px;display:block">
+      <path d="M0,80 L0,48 C240,8 480,0 720,0 C960,0 1200,8 1440,48 L1440,80 Z" fill="#f7f3ee"/>
+    </svg>
   </div>
 </section>
 
+<!-- ============ POSITIONING ============ -->
+<section style="background:#f7f3ee;padding:clamp(56px,9vw,112px) clamp(24px,5vw,40px) clamp(64px,10vw,120px)">
+  <div style="max-width:760px;margin:0 auto;text-align:center">
+    <p class="abm-eyebrow abm-reveal" style="margin:0 0 20px">01 — The approach</p>
+    <h2 class="abm-reveal" data-delay="1" style="font-weight:400;font-size:clamp(34px,4.4vw,50px);line-height:1.1;margin:0">
+      Show up like the expert you are,<span class="block italic" style="color:#c08566">without living in your feed.</span>
+    </h2>
+    <p class="abm-reveal" data-delay="2" style="margin:28px auto 0;max-width:600px;font-size:18px;line-height:1.75;color:#7a6c5e">You are busy running a practice and treating clients. I handle the content, the strategy, and the consistency, so your presence online finally matches the quality of your work. Warm, intentional, and unmistakably you.</p>
+    <div class="abm-reveal" data-delay="2" style="width:48px;height:2px;background:#c08566;margin:36px auto 0"></div>
+  </div>
+</section>
+
+<!-- Wave: ivory → linen -->
+<div class="abm-wave" aria-hidden="true" style="background:#efe6dc">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" height="72">
+    <path d="M0,0 L1440,0 C1200,72 240,72 0,0 Z" fill="#f7f3ee"/>
+  </svg>
+</div>
+
 <!-- ============ SERVICES ============ -->
-<section id="services" style="background:#efe6dc;padding:clamp(72px,11vw,128px) clamp(24px,5vw,40px)">
+<section id="services" style="background:#efe6dc;padding:clamp(48px,8vw,96px) clamp(24px,5vw,40px) clamp(72px,11vw,128px)">
   <div style="max-width:1152px;margin:0 auto">
     <div style="max-width:640px;margin:0 auto clamp(40px,6vw,64px);text-align:center">
-      <p class="abm-eyebrow" style="margin:0 0 20px">02 — Ways to work together</p>
-      <h2 style="font-weight:400;font-size:clamp(34px,4.4vw,50px);line-height:1.1;margin:0">
-        Built around your services,<span class="block italic" style="color:#c08566">and the way you actually work.</span>
+      <p class="abm-eyebrow abm-reveal" style="margin:0 0 20px">02 — Ways to work together</p>
+      <h2 class="abm-reveal" data-delay="1" style="font-weight:400;font-size:clamp(34px,4.4vw,50px);line-height:1.1;margin:0">
+        Built around your practice,<span class="block italic" style="color:#c08566">and the way you actually work.</span>
       </h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(20px,2.4vw,32px);align-items:stretch">
-      <div class="abm-card-ivory abm-lift flex flex-col">
+      <div class="abm-card-ivory abm-lift abm-reveal flex flex-col">
         <div class="abm-media-frame relative -mx-7 -mt-7 mb-6 aspect-[4/3] overflow-hidden rounded-t-card">
           <img class="abm-media absolute inset-0 h-full w-full object-cover" src="images/home-content-session.avif" alt="A phone on a tripod filming a content session" />
         </div>
@@ -152,7 +178,7 @@
         <p class="text-taupe-ink grow">A strategic refresh, not a full-time content manager. Together we build a high-impact bank of intentional, on-brand photo and video you can actually use long after the session ends.</p>
         <a href="services.html" class="abm-btn-secondary mt-7 self-start text-sm !py-2.5 !px-5">Explore sessions</a>
       </div>
-      <div class="abm-card-ivory abm-lift flex flex-col">
+      <div class="abm-card-ivory abm-lift abm-reveal flex flex-col" data-delay="1">
         <div class="abm-media-frame relative -mx-7 -mt-7 mb-6 aspect-[4/3] overflow-hidden rounded-t-card">
           <img class="abm-media absolute inset-0 h-full w-full object-cover" src="images/home-event-collection.avif" alt="Morgan photographing with a camera at an event" />
         </div>
@@ -161,7 +187,7 @@
         <p class="text-taupe-ink grow">Launches, grand openings, and trainings captured in real time. The atmosphere, the details, the real moments, turned into content you can leverage long after the day is over.</p>
         <a href="services.html" class="abm-btn-secondary mt-7 self-start text-sm !py-2.5 !px-5">Explore events</a>
       </div>
-      <div class="abm-card-ivory abm-lift flex flex-col">
+      <div class="abm-card-ivory abm-lift abm-reveal flex flex-col" data-delay="2">
         <div class="abm-media-frame relative -mx-7 -mt-7 mb-6 aspect-[4/3] overflow-hidden rounded-t-card">
           <img class="abm-media absolute inset-0 h-full w-full object-cover" src="images/home-ongoing-support.avif" alt="Morgan smiling while holding a phone" />
         </div>
@@ -174,16 +200,23 @@
   </div>
 </section>
 
+<!-- Wave: linen → ivory -->
+<div class="abm-wave" aria-hidden="true" style="background:#f7f3ee">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" height="72">
+    <path d="M0,72 L1440,72 C1200,0 240,0 0,72 Z" fill="#efe6dc"/>
+  </svg>
+</div>
+
 <!-- ============ PORTFOLIO — COVER SLIDER ============ -->
-<section id="portfolio" style="background:#f7f3ee;padding:clamp(72px,11vw,128px) 0;overflow:hidden">
+<section id="portfolio" style="background:#f7f3ee;padding:clamp(48px,8vw,96px) 0 clamp(72px,11vw,128px);overflow:hidden">
   <div style="max-width:1200px;margin:0 auto clamp(32px,4.5vw,52px);padding:0 clamp(24px,5vw,48px);display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap">
     <div style="max-width:680px">
-      <p class="abm-eyebrow" style="margin:0 0 16px">03 — The work</p>
-      <h2 style="font-weight:400;font-size:clamp(34px,4.6vw,52px);line-height:1.08;margin:0">
+      <p class="abm-eyebrow abm-reveal" style="margin:0 0 16px">03 — The work</p>
+      <h2 class="abm-reveal" data-delay="1" style="font-weight:400;font-size:clamp(34px,4.6vw,52px);line-height:1.08;margin:0">
         Scroll-stopping covers,<br><span class="italic" style="color:#c08566">made for providers like you.</span>
       </h2>
     </div>
-    <p style="margin:0 0 6px;max-width:330px;font-size:16px;line-height:1.7;color:#7a6c5e">A selection of opening frames from carousels I have produced. Each one is built to stop the thumb and start the booking.</p>
+    <p class="abm-reveal" data-delay="2" style="margin:0 0 6px;max-width:330px;font-size:16px;line-height:1.7;color:#7a6c5e">A selection of opening frames from carousels I have produced. Each one is built to stop the thumb and start the booking.</p>
   </div>
   <div id="cover-track" class="abm-slider" style="display:flex;gap:clamp(16px,1.8vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:clamp(24px,5vw,48px);padding:4px clamp(24px,5vw,48px)">
     <figure style="flex:0 0 auto;width:clamp(224px,23vw,280px);margin:0;scroll-snap-align:start">
@@ -270,10 +303,17 @@
   </div>
 </section>
 
+<!-- Wave: ivory → linen -->
+<div class="abm-wave" aria-hidden="true" style="background:#efe6dc">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" height="72">
+    <path d="M0,0 L1440,0 C1200,72 240,72 0,0 Z" fill="#f7f3ee"/>
+  </svg>
+</div>
+
 <!-- ============ WORK WITH MORGAN ============ -->
-<section style="background:#efe6dc;padding:clamp(72px,11vw,128px) clamp(24px,5vw,40px)">
+<section style="background:#efe6dc;padding:clamp(48px,8vw,96px) clamp(24px,5vw,40px) clamp(72px,11vw,128px)">
   <div style="max-width:1152px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5vw,72px);align-items:center">
-    <div style="position:relative">
+    <div class="abm-reveal" style="position:relative">
       <div style="position:relative;aspect-ratio:4/5;border-top-left-radius:9999px;border-top-right-radius:9999px;border-bottom-left-radius:16px;border-bottom-right-radius:16px;overflow:hidden;border:1px solid rgba(220,211,201,.7)">
         <img src="images/work-with-morgan.avif" alt="Morgan, founder of Aesthetics by Morgan, holding a camera" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
@@ -295,23 +335,29 @@
       </div>
     </div>
     <div>
-      <p class="abm-eyebrow" style="margin:0 0 18px">04 — Meet Morgan</p>
-      <h2 style="font-weight:400;font-size:clamp(34px,4.4vw,46px);line-height:1.1;margin:0">
+      <p class="abm-eyebrow abm-reveal" style="margin:0 0 18px">04 — Meet Morgan</p>
+      <h2 class="abm-reveal" data-delay="1" style="font-weight:400;font-size:clamp(34px,4.4vw,46px);line-height:1.1;margin:0">
         Strategy first.<br><span class="italic" style="color:#c08566">Camera always.</span>
       </h2>
-      <p style="margin:24px 0 0;font-size:18px;line-height:1.75;color:#7a6c5e">I am a content creator and strategist for aesthetic providers across San Antonio and beyond. I built Aesthetics by Morgan because talented injectors and estheticians deserve a presence online that feels as elevated as the work they do in the room.</p>
-      <p style="margin:18px 0 0;font-size:18px;line-height:1.75;color:#7a6c5e">Every session is calm, directed, and built around you, so the content feels natural and the strategy actually converts.</p>
-      <p style="margin:28px 0 0;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#8a7b6d">Based in San Antonio · Available for travel</p>
-      <a href="contact.html" class="abm-btn-secondary" style="margin-top:24px;display:inline-flex">Let's work together</a>
+      <p class="abm-reveal" data-delay="1" style="margin:24px 0 0;font-size:18px;line-height:1.75;color:#7a6c5e">I am a content creator and strategist for aesthetic providers across San Antonio and beyond. I built Aesthetics by Morgan because talented injectors and estheticians deserve a presence online that feels as elevated as the work they do in the room.</p>
+      <p class="abm-reveal" data-delay="2" style="margin:18px 0 0;font-size:18px;line-height:1.75;color:#7a6c5e">Every session is calm, directed, and built around you, so the content feels natural and the strategy actually converts.</p>
+      <p class="abm-reveal" data-delay="2" style="margin:28px 0 0;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#8a7b6d">Based in San Antonio · Available for travel</p>
+      <a href="contact.html" class="abm-btn-secondary abm-reveal" data-delay="2" style="margin-top:24px;display:inline-flex">Let's work together</a>
     </div>
   </div>
 </section>
 
 <!-- ============ CTA BAND ============ -->
 <section style="position:relative;overflow:hidden">
+  <!-- Wave: linen → CTA (top) -->
+  <div aria-hidden="true" style="position:absolute;top:0;left:0;right:0;z-index:5;line-height:0">
+    <svg viewBox="0 0 1440 72" preserveAspectRatio="none" style="width:100%;height:72px;display:block">
+      <path d="M0,0 L1440,0 L1440,40 C1200,72 240,72 0,40 Z" fill="#efe6dc"/>
+    </svg>
+  </div>
   <img src="images/portrait-2.avif" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%" />
   <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(46,39,35,.5),rgba(46,39,35,.66))"></div>
-  <div style="position:relative;z-index:2;max-width:780px;margin:0 auto;padding:clamp(92px,14vw,160px) clamp(24px,5vw,40px);text-align:center">
+  <div style="position:relative;z-index:6;max-width:780px;margin:0 auto;padding:clamp(112px,16vw,172px) clamp(24px,5vw,40px) clamp(92px,12vw,148px);text-align:center">
     <p class="abm-eyebrow" style="color:#e3c9c2;margin:0 0 22px">Let's begin</p>
     <h2 style="font-weight:400;font-size:clamp(40px,6.4vw,72px);line-height:1.03;margin:0;color:#f7f3ee">
       Let's build a brand<br><span class="italic">that feels like you.</span>
@@ -320,33 +366,39 @@
     <a href="contact.html" class="abm-btn-primary" style="margin-top:38px;display:inline-flex">Start the conversation</a>
     <div aria-hidden="true" style="width:46px;height:1px;background:rgba(247,243,238,.45);margin:40px auto 0"></div>
   </div>
+  <!-- Wave: CTA → ivory (bottom) -->
+  <div aria-hidden="true" style="position:absolute;bottom:0;left:0;right:0;z-index:5;line-height:0">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="width:100%;height:80px;display:block">
+      <path d="M0,80 L0,50 C240,8 480,0 720,0 C960,0 1200,8 1440,50 L1440,80 Z" fill="#f7f3ee"/>
+    </svg>
+  </div>
 </section>
 
 <!-- ============ TESTIMONIALS ============ -->
-<section style="background:#f7f3ee;padding:clamp(72px,11vw,128px) clamp(24px,5vw,40px)">
+<section style="background:#f7f3ee;padding:clamp(80px,12vw,140px) clamp(24px,5vw,40px) clamp(72px,11vw,128px)">
   <div style="max-width:1152px;margin:0 auto">
     <div style="max-width:640px;margin:0 auto clamp(40px,6vw,64px);text-align:center">
-      <p class="abm-eyebrow" style="margin:0 0 20px">05 — Kind words</p>
-      <h2 style="font-weight:400;font-size:clamp(34px,4.4vw,50px);line-height:1.1;margin:0">
+      <p class="abm-eyebrow abm-reveal" style="margin:0 0 20px">05 — Kind words</p>
+      <h2 class="abm-reveal" data-delay="1" style="font-weight:400;font-size:clamp(34px,4.4vw,50px);line-height:1.1;margin:0">
         Providers who finally feel<span class="block italic" style="color:#c08566">proud of their presence.</span>
       </h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(20px,2.4vw,32px);align-items:start">
-      <figure class="abm-card abm-lift" style="display:flex;flex-direction:column;margin:0">
+      <figure class="abm-card abm-lift abm-reveal" style="display:flex;flex-direction:column;margin:0">
         <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;line-height:1.36;color:#2e2723;margin:0">"You can give her a skeleton outline of a vision and she brings it fully to life, and then some. It took me two years to find the right person, and I won't be using anyone else."</p>
         <figcaption style="margin-top:24px">
           <p style="font-family:'Jost',sans-serif;font-weight:500;margin:0;color:#2e2723">Tiffany Rosenberg</p>
           <p style="font-family:'Jost',sans-serif;font-size:14px;margin:2px 0 0;color:#7a6c5e">Aesthetic provider</p>
         </figcaption>
       </figure>
-      <figure class="abm-card abm-lift" style="display:flex;flex-direction:column;margin:0">
+      <figure class="abm-card abm-lift abm-reveal" data-delay="1" style="display:flex;flex-direction:column;margin:0">
         <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;line-height:1.36;color:#2e2723;margin:0">"She understood my brand, my voice, and exactly what I needed with minimal direction, then knocked it out of the park on the first try. I've reclaimed my time outside the office."</p>
         <figcaption style="margin-top:24px">
           <p style="font-family:'Jost',sans-serif;font-weight:500;margin:0;color:#2e2723">Tiffani Terrell</p>
           <p style="font-family:'Jost',sans-serif;font-size:14px;margin:2px 0 0;color:#7a6c5e">Aesthetic provider</p>
         </figcaption>
       </figure>
-      <figure class="abm-card abm-lift" style="display:flex;flex-direction:column;margin:0">
+      <figure class="abm-card abm-lift abm-reveal" data-delay="2" style="display:flex;flex-direction:column;margin:0">
         <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;line-height:1.36;color:#2e2723;margin:0">"You can hand her a messy brain dump and she turns it into content that sounds like you, looks elevated, and actually converts. She didn't change my brand, she made it make sense."</p>
         <figcaption style="margin-top:24px">
           <p style="font-family:'Jost',sans-serif;font-weight:500;margin:0;color:#2e2723">Taylor Brooks</p>
@@ -356,6 +408,13 @@
     </div>
   </div>
 </section>
+
+<!-- Wave: ivory → espresso (footer) -->
+<div class="abm-wave" aria-hidden="true" style="background:#2e2723">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
+    <path d="M0,0 L1440,0 C1200,60 240,60 0,0 Z" fill="#f7f3ee"/>
+  </svg>
+</div>
 
 <!-- ============ FOOTER ============ -->
 <footer class="bg-espresso text-ivory">
@@ -400,15 +459,26 @@
 
 </div>
 <script>
-  // Transparent nav scroll behavior
+  // Nav scroll + parallax in single listener
   const nav = document.getElementById('abm-nav');
+  const heroBg = document.getElementById('hero-bg');
+  const heroSection = document.getElementById('top');
+
   window.addEventListener('scroll', function() {
-    if (window.scrollY > 60) {
+    const y = window.scrollY;
+
+    // Nav
+    if (y > 60) {
       nav.classList.remove('nav-transparent');
       nav.classList.add('nav-solid');
     } else {
       nav.classList.remove('nav-solid');
       nav.classList.add('nav-transparent');
+    }
+
+    // Parallax (only while hero is visible)
+    if (heroBg && y < heroSection.offsetHeight * 1.2) {
+      heroBg.style.transform = 'translateY(' + (y * 0.38) + 'px)';
     }
   }, { passive: true });
 
@@ -434,6 +504,18 @@
   document.getElementById('slider-next').addEventListener('click', function() {
     track.scrollBy({ left: Math.max(track.clientWidth * 0.8, 280), behavior: 'smooth' });
   });
+
+  // Scroll reveal
+  var reveals = document.querySelectorAll('.abm-reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(function(el) { observer.observe(el); });
 </script>
 </body>
 </html>
