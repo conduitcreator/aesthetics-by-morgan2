@@ -37,8 +37,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="images/portrait-3.webp" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&family=Oswald:wght@500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="abm/aesthetics-by-morgan.css">
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
     body { margin: 0; }
@@ -229,7 +230,7 @@
 <!-- ============ HERO ============ -->
 <section id="top" class="relative flex items-center" style="min-height:94svh;overflow:hidden">
   <div id="hero-bg-wrap">
-    <img id="hero-bg" src="images/portrait-3.webp" alt="Morgan editing content at a bright studio desk" />
+    <img id="hero-bg" src="images/portrait-3.webp" alt="Morgan editing content at a bright studio desk" fetchpriority="high" decoding="async" />
   </div>
   <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,15,12,.30) 0%,rgba(20,15,12,.40) 40%,rgba(20,15,12,.70) 100%)" aria-hidden="true"></div>
   <div style="position:absolute;top:0;left:0;right:0;height:170px;background:linear-gradient(180deg,rgba(20,15,12,.55),transparent);pointer-events:none" aria-hidden="true"></div>
