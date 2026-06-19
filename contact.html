@@ -68,6 +68,18 @@
       .abm-words .w{ opacity:1; transform:none; transition:none; }
       .abm-ul-svg path{ stroke-dashoffset:0; transition:none; }
     }
+
+    /* Palette — matches homepage */
+    :root { --abm-rust:#c2703d; }
+    .abm-eyebrow{ color:#a85f30; }
+    footer .abm-eyebrow{ color:#e3c9c2; }
+
+    /* Ornament divider */
+    .abm-ornament { display:flex; align-items:center; justify-content:center; gap:16px; margin:0 auto clamp(40px,5vw,56px); max-width:210px; }
+    .abm-ornament .line { height:1px; flex:1; }
+    .abm-ornament .l1 { background:linear-gradient(90deg, transparent, #dcd3c9); }
+    .abm-ornament .l2 { background:linear-gradient(90deg, #dcd3c9, transparent); }
+    .abm-ornament .dot { width:7px; height:7px; transform:rotate(45deg); border:1px solid #c08566; flex:none; }
   </style>
 </head>
 <body>
@@ -121,7 +133,7 @@
   <div style="max-width:1152px;margin:0 auto">
     <p class="abm-eyebrow abm-reveal" style="margin:0 0 18px">Contact</p>
     <h1 class="abm-words" data-delay="1" style="font-weight:400;font-size:clamp(44px,6.4vw,76px);line-height:1.02;margin:0">
-      Let's <span class="italic abm-ul" style="color:#c08566">connect.<svg class="abm-ul-svg" viewBox="0 0 200 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3,10 C 46,3 92,15 130,8 C 162,2 188,11 197,7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span>
+      Let's <span class="italic abm-ul" style="color:#c2703d">connect.<svg class="abm-ul-svg" viewBox="0 0 200 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3,10 C 46,3 92,15 130,8 C 162,2 188,11 197,7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span>
     </h1>
     <p class="abm-reveal" data-delay="2" style="margin:24px 0 0;max-width:560px;font-size:18px;line-height:1.75;color:#7a6c5e">Fill out the form and share the details about your next big move. I'll get back to you within 48 hours. Ready to level up your brand and turn ideas into real results? I'm here for it.</p>
   </div>
@@ -129,6 +141,7 @@
 
 <!-- ============ FORM + ASIDE ============ -->
 <section style="background:#f7f3ee;padding:clamp(48px,7vw,88px) clamp(24px,5vw,40px) clamp(72px,10vw,120px)">
+  <div class="abm-ornament abm-reveal" aria-hidden="true" style="margin-bottom:clamp(44px,6vw,68px)"><span class="line l1"></span><span class="dot"></span><span class="line l2"></span></div>
   <div style="max-width:1152px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:start">
 
     <!-- FORM -->
@@ -206,7 +219,7 @@
 
     <!-- ASIDE -->
     <aside>
-      <div class="abm-reveal" style="position:relative;aspect-ratio:4/5;border-top-left-radius:9999px;border-top-right-radius:9999px;border-bottom-left-radius:16px;border-bottom-right-radius:16px;overflow:hidden;border:1px solid rgba(220,211,201,.7);margin-bottom:32px">
+      <div class="abm-reveal abm-lift" style="position:relative;aspect-ratio:4/5;border-top-left-radius:9999px;border-top-right-radius:9999px;border-bottom-left-radius:16px;border-bottom-right-radius:16px;overflow:hidden;border:1px solid rgba(220,211,201,.7);margin-bottom:32px">
         <img class="abm-ken" src="images/contact-aside.webp" alt="Morgan, founder of Aesthetics by Morgan" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       </div>
       <p class="abm-eyebrow abm-reveal" style="margin:0 0 20px">Reach me directly</p>

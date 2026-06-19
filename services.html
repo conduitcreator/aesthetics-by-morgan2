@@ -33,6 +33,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="abm/aesthetics-by-morgan.css">
   <style>
     html { scroll-behavior: smooth; }
@@ -67,6 +68,20 @@
       .abm-words .w{ opacity:1; transform:none; transition:none; }
       .abm-ul-svg path{ stroke-dashoffset:0; transition:none; }
     }
+
+    /* Palette — matches homepage */
+    :root { --abm-rust:#c2703d; }
+    .abm-eyebrow{ color:#a85f30; }
+    footer .abm-eyebrow{ color:#e3c9c2; }
+    .font-script { font-family:'Pinyon Script', cursive; font-weight:400; line-height:.9; }
+    .font-impact { font-family:'Oswald', system-ui, sans-serif; font-weight:700; text-transform:uppercase; letter-spacing:.005em; }
+
+    /* Ornament divider */
+    .abm-ornament { display:flex; align-items:center; justify-content:center; gap:16px; margin:0 auto clamp(40px,5vw,56px); max-width:210px; }
+    .abm-ornament .line { height:1px; flex:1; }
+    .abm-ornament .l1 { background:linear-gradient(90deg, transparent, #dcd3c9); }
+    .abm-ornament .l2 { background:linear-gradient(90deg, #dcd3c9, transparent); }
+    .abm-ornament .dot { width:7px; height:7px; transform:rotate(45deg); border:1px solid #c08566; flex:none; }
   </style>
 </head>
 <body>
@@ -121,12 +136,12 @@
     <div>
       <p class="abm-eyebrow abm-reveal" style="margin:0 0 20px">Services · San Antonio + remote</p>
       <h1 class="abm-words" data-delay="1" style="font-weight:400;font-size:clamp(40px,5.6vw,66px);line-height:1.04;margin:0">
-        Content shouldn't feel like<span class="block italic" style="color:#c08566">another full-time <span class="abm-ul">job.<svg class="abm-ul-svg" viewBox="0 0 200 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3,10 C 46,3 92,15 130,8 C 162,2 188,11 197,7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span></span>
+        Content shouldn't feel like<span class="block italic" style="color:#c2703d">another full-time <span class="abm-ul">job.<svg class="abm-ul-svg" viewBox="0 0 200 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3,10 C 46,3 92,15 130,8 C 162,2 188,11 197,7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span></span>
       </h1>
       <p class="abm-reveal" data-delay="2" style="margin:26px 0 0;max-width:520px;font-size:18px;line-height:1.75;color:#7a6c5e">Creating consistent, high-quality content takes time, energy, and strategy, especially in aesthetics. I help aesthetic providers — injectors, estheticians, medspas, and beyond — build polished, strategic content through in-person sessions and ongoing support.</p>
       <a href="#families" class="abm-btn-primary abm-reveal" data-delay="2" style="margin-top:34px;display:inline-flex">Explore services</a>
     </div>
-    <div class="abm-reveal" style="position:relative;aspect-ratio:4/5;border-top-left-radius:9999px;border-top-right-radius:9999px;border-bottom-left-radius:16px;border-bottom-right-radius:16px;overflow:hidden;border:1px solid rgba(220,211,201,.7)">
+    <div class="abm-reveal abm-lift" style="position:relative;aspect-ratio:4/5;border-top-left-radius:9999px;border-top-right-radius:9999px;border-bottom-left-radius:16px;border-bottom-right-radius:16px;overflow:hidden;border:1px solid rgba(220,211,201,.7)">
       <img class="abm-ken" src="images/svc-content-sessions.webp" alt="Morgan creating content for an aesthetic provider" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
     </div>
   </div>
@@ -134,8 +149,9 @@
 
 <!-- ============ FAMILY 01 — CONTENT SESSIONS ============ -->
 <section id="families" style="background:#f7f3ee;padding:clamp(64px,9vw,120px) clamp(24px,5vw,40px)">
+  <div class="abm-ornament abm-reveal" aria-hidden="true" style="margin-bottom:clamp(48px,7vw,80px)"><span class="line l1"></span><span class="dot"></span><span class="line l2"></span></div>
   <div style="max-width:1152px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5vw,72px);align-items:start">
-    <div class="abm-reveal" style="position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;border:1px solid rgba(220,211,201,.7)">
+    <div class="abm-reveal abm-lift" style="position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;border:1px solid rgba(220,211,201,.7)">
       <img class="abm-ken" src="images/svc-fam-01.webp" alt="A content session in progress" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
     </div>
     <div>
@@ -186,11 +202,11 @@
         </details>
       </div>
       <p class="abm-reveal" data-delay="2" style="margin:26px 0 0;display:inline-flex;align-items:center;gap:12px;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.04em;color:#2e2723">
-        <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;color:#c08566">Starting at $650</span>
+        <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;color:#c2703d">Starting at $650</span>
         <span style="color:#8a7b6d">custom pricing by event scope</span>
       </p>
     </div>
-    <div class="abm-reveal" style="order:1;position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;border:1px solid rgba(220,211,201,.7)">
+    <div class="abm-reveal abm-lift" style="order:1;position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;border:1px solid rgba(220,211,201,.7)">
       <img class="abm-ken" src="images/svc-fam-02.webp" alt="Event content capture in progress" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
     </div>
   </div>
@@ -199,7 +215,7 @@
 <!-- ============ FAMILY 03 — ONGOING ============ -->
 <section style="background:#f7f3ee;padding:clamp(64px,9vw,120px) clamp(24px,5vw,40px)">
   <div style="max-width:1152px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5vw,72px);align-items:start">
-    <div class="abm-reveal" style="position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;border:1px solid rgba(220,211,201,.7)">
+    <div class="abm-reveal abm-lift" style="position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;border:1px solid rgba(220,211,201,.7)">
       <img class="abm-ken" src="images/svc-fam-03.webp" alt="Planning ongoing content strategy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
     </div>
     <div>
@@ -216,10 +232,21 @@
         </details>
       </div>
       <p class="abm-reveal" data-delay="2" style="margin:26px 0 0;display:inline-flex;align-items:center;gap:12px;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.04em;color:#2e2723">
-        <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;color:#c08566">3 or 6 month</span>
+        <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;color:#c2703d">3 or 6 month</span>
         <span style="color:#8a7b6d">commitments available</span>
       </p>
     </div>
+  </div>
+</section>
+
+<!-- ============ STATEMENT BAND ============ -->
+<section style="background:#1d1714;color:#f7f3ee;padding:clamp(84px,13vw,160px) clamp(24px,5vw,40px);text-align:center;position:relative;overflow:hidden">
+  <div aria-hidden="true" style="position:absolute;top:-25%;left:50%;transform:translateX(-50%);width:130%;height:90%;background:radial-gradient(ellipse at center,rgba(194,112,61,.18),transparent 62%);pointer-events:none"></div>
+  <div style="position:relative;max-width:1040px;margin:0 auto">
+    <p class="font-script abm-reveal" style="font-size:clamp(38px,6vw,68px);color:#e0a17a;margin:0 0 2px">here's the thing —</p>
+    <h2 class="font-impact abm-words" data-delay="1" style="font-size:clamp(40px,8vw,104px);line-height:.94;margin:0;color:#f7f3ee">You don't need more content.<br>You need the <span style="color:var(--abm-rust)">right</span> content.</h2>
+    <p class="abm-reveal" data-delay="1" style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(24px,3.6vw,40px);color:rgba(247,243,238,.92);margin:14px 0 0">Built with intention, not on a whim.</p>
+    <p class="abm-reveal" data-delay="2" style="max-width:580px;margin:26px auto 0;font-family:'Jost',sans-serif;font-size:17px;line-height:1.75;color:rgba(247,243,238,.72)">Every session is shaped around your goals, your brand, and the way you actually want to show up — so the content keeps working long after the shoot.</p>
   </div>
 </section>
 
